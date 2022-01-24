@@ -15,10 +15,9 @@ namespace BookStore.BookOperations.GetBooks
             _dbContext = dbContext;
 
         }
-        public GetBookByIdModel Handler(int id)
+        public GetBookByIdModel Handle(int id)
         {
             var book = _dbContext.Books.Where(x => x.Id == id).SingleOrDefault();
-            GetBookByIdModel getBookByIdModel = new GetBookByIdModel();
 
             if (book is null)
             {
@@ -26,6 +25,7 @@ namespace BookStore.BookOperations.GetBooks
             }
             else
             {
+                GetBookByIdModel getBookByIdModel = new GetBookByIdModel();
                 getBookByIdModel.Title = book.Title;
                 getBookByIdModel.Genre = ((GenreEnum)book.GenreId).ToString();
                 getBookByIdModel.PublisDate = book.PublisDate.Date.ToString("dd/MM/yyyy");

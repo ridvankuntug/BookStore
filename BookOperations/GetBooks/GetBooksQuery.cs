@@ -14,7 +14,7 @@ namespace BookStore.BookOperations.GetBooks
             _dbContext = dbContext;
 
         }
-        public List<BooksViewModel> Handler()
+        public List<BooksViewModel> Handle()
         {
             var bookList = _dbContext.Books.OrderBy(x => x.Id).ToList<Book>();
             List<BooksViewModel> vm = new List<BooksViewModel>();
