@@ -1,4 +1,5 @@
-﻿using BookStore.Common;
+﻿using AutoMapper;
+using BookStore.Common;
 using BookStore.DBOperations;
 using BookStore.Model;
 using System;
@@ -10,14 +11,16 @@ namespace BookStore.BookOperations.GetBooks
     public class GetBookById
     {
         private readonly BookStoreDbContext _dbContext;
-        public GetBookById(BookStoreDbContext dbContext)
+        private readonly IMapper _mapper;
+        public int BookId { get; set; }
+        public GetBookById(BookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
-
+            _mapper = mapper;
         }
-        public GetBookByIdModel Handle(int id)
+        public GetBookByIdModel Handle()
         {
-            var book = _dbContext.Books.Where(x => x.Id == id).SingleOrDefault();
+            var book = _dbContext.Books.Where(x => x.Id == BookId).SingleOrDefault();
 
             if (book is null)
             {
@@ -25,11 +28,7 @@ namespace BookStore.BookOperations.GetBooks
             }
             else
             {
-                GetBookByIdModel getBookByIdModel = new GetBookByIdModel();
-                getBookByIdModel.Title = book.Title;
-                getBookByIdModel.Genre = ((GenreEnum)book.GenreId).ToString();
-                getBookByIdModel.PublisDate = book.PublisDate.Date.ToString("dd/MM/yyyy");
-                getBookByIdModel.PageCount = book.PageCount;
+                GetBookByIdModel getBookByIdModel = _mapper.Map<GetBookByIdModel>(book);
                 return getBookByIdModel;
             }
         }

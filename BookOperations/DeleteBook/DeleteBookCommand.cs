@@ -11,10 +11,11 @@ namespace BookStore.BookOperations.DeleteBook
         {
             _dbContext = dbContext;
         }
+        public int BookId { get; set; }
 
-        public void Handle(int id)
+        public void Handle()
         {
-            var book = _dbContext.Books.SingleOrDefault(xbook => xbook.Id == id);
+            var book = _dbContext.Books.SingleOrDefault(xbook => xbook.Id == BookId);
 
             if (book is null)
             {
