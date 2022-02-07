@@ -1,12 +1,11 @@
 ﻿using AutoMapper;
-using BookStore.BookOperations.CreateBook;
-using BookStore.BookOperations.DeleteBook;
-using BookStore.BookOperations.GetBooks;
-using BookStore.BookOperations.UpdateBook;
+using BookStore.Application.BookOperations.CreateBook;
+using BookStore.Application.BookOperations.DeleteBook;
+using BookStore.Application.BookOperations.GetBooks;
+using BookStore.Application.BookOperations.UpdateBook;
 using BookStore.DBOperations;
 using FluentValidation;
 using Microsoft.AspNetCore.Mvc;
-using System;
 
 namespace BookStore.Controllers
 {
@@ -33,7 +32,7 @@ namespace BookStore.Controllers
         [HttpGet("{id}")]
         public IActionResult GetById(int id)
         {
-            GetBookById getBookById = new GetBookById(_context, _mapper);
+            GetBookByIdQuery getBookById = new GetBookByIdQuery(_context, _mapper);
             GetBookByIdValidator validationRules = new GetBookByIdValidator();
             try
             {

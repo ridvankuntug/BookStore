@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 using BookStore.DBOperations;
-using BookStore.Model;
+using BookStore.Entities;
 using System;
 using System.Linq;
 
-namespace BookStore.BookOperations.CreateBook
+namespace BookStore.Application.BookOperations.CreateBook
 {
     public class CreateBookCommand
     {
@@ -29,7 +29,7 @@ namespace BookStore.BookOperations.CreateBook
             }
             else
             {
-                book = _mapper.Map<Book>(Model);
+                book = _mapper.Map<Books>(Model);
                 _dbContext.Books.Add(book);
                 _dbContext.SaveChanges();
             }

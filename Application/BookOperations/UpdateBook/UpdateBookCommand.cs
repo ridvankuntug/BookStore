@@ -1,10 +1,10 @@
 ﻿using BookStore.DBOperations;
-using BookStore.Model;
+using BookStore.Entities;
 using System;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 
-namespace BookStore.BookOperations.UpdateBook
+namespace BookStore.Application.BookOperations.UpdateBook
 {
     public class UpdateBookCommand
     {

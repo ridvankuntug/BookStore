@@ -1,26 +1,24 @@
 ﻿using AutoMapper;
-using BookStore.Common;
 using BookStore.DBOperations;
-using BookStore.Model;
+using Microsoft.EntityFrameworkCore;
 using System;
-using System.Collections.Generic;
 using System.Linq;
 
-namespace BookStore.BookOperations.GetBooks
+namespace BookStore.Application.BookOperations.GetBooks
 {
-    public class GetBookById
+    public class GetBookByIdQuery
     {
         private readonly BookStoreDbContext _dbContext;
         private readonly IMapper _mapper;
         public int BookId { get; set; }
-        public GetBookById(BookStoreDbContext dbContext, IMapper mapper)
+        public GetBookByIdQuery(BookStoreDbContext dbContext, IMapper mapper)
         {
             _dbContext = dbContext;
             _mapper = mapper;
         }
         public GetBookByIdModel Handle()
         {
-            var book = _dbContext.Books.Where(x => x.Id == BookId).SingleOrDefault();
+            var book = _dbContext.Books.Include(g => g.Genre).Where(x => x.Id == BookId).SingleOrDefault();
 
             if (book is null)
             {

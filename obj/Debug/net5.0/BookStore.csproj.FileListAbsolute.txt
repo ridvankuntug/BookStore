@@ -11,7 +11,6 @@ C:\Users\ridva\OneDrive\Belgeler\Visual Studio Repos\Source\Repos\BookStore\bin\
 C:\Users\ridva\OneDrive\Belgeler\Visual Studio Repos\Source\Repos\BookStore\bin\Debug\net5.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\ridva\OneDrive\Belgeler\Visual Studio Repos\Source\Repos\BookStore\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\ridva\OneDrive\Belgeler\Visual Studio Repos\Source\Repos\BookStore\bin\Debug\net5.0\Swashbuckle.AspNetCore.SwaggerUI.dll
-C:\Users\ridva\OneDrive\Belgeler\Visual Studio Repos\Source\Repos\BookStore\obj\Debug\net5.0\BookStore.csproj.AssemblyReference.cache
 C:\Users\ridva\OneDrive\Belgeler\Visual Studio Repos\Source\Repos\BookStore\obj\Debug\net5.0\BookStore.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\ridva\OneDrive\Belgeler\Visual Studio Repos\Source\Repos\BookStore\obj\Debug\net5.0\BookStore.AssemblyInfoInputs.cache
 C:\Users\ridva\OneDrive\Belgeler\Visual Studio Repos\Source\Repos\BookStore\obj\Debug\net5.0\BookStore.AssemblyInfo.cs
@@ -34,3 +33,4 @@ C:\Users\ridva\OneDrive\Belgeler\Visual Studio Repos\Source\Repos\BookStore\bin\
 C:\Users\ridva\OneDrive\Belgeler\Visual Studio Repos\Source\Repos\BookStore\bin\Debug\net5.0\AutoMapper.dll
 C:\Users\ridva\OneDrive\Belgeler\Visual Studio Repos\Source\Repos\BookStore\bin\Debug\net5.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
 C:\Users\ridva\OneDrive\Belgeler\Visual Studio Repos\Source\Repos\BookStore\bin\Debug\net5.0\FluentValidation.dll
+C:\Users\ridva\OneDrive\Belgeler\Visual Studio Repos\Source\Repos\BookStore\obj\Debug\net5.0\BookStore.csproj.AssemblyReference.cache

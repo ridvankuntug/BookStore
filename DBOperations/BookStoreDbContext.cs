@@ -1,4 +1,4 @@
-﻿using BookStore.Model;
+﻿using BookStore.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace BookStore.DBOperations
@@ -6,7 +6,8 @@ namespace BookStore.DBOperations
     public class BookStoreDbContext : DbContext
     {
         public BookStoreDbContext(DbContextOptions<BookStoreDbContext> options) : base(options) { }
-        public DbSet<Book> Books { get; set; }
+        public DbSet<Books> Books { get; set; }
+        public DbSet<Genres> Genres { get; set; }
 
     }
 }

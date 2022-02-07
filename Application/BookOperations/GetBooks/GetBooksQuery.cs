@@ -1,11 +1,11 @@
 ﻿using AutoMapper;
-using BookStore.Common;
 using BookStore.DBOperations;
-using BookStore.Model;
+using BookStore.Entities;
+using Microsoft.EntityFrameworkCore;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace BookStore.BookOperations.GetBooks
+namespace BookStore.Application.BookOperations.GetBooks
 {
     public class GetBooksQuery
     {
@@ -19,7 +19,7 @@ namespace BookStore.BookOperations.GetBooks
         }
         public List<BooksViewModel> Handle()
         {
-            var bookList = _dbContext.Books.OrderBy(x => x.Id).ToList<Book>();
+            var bookList = _dbContext.Books.Include(g => g.Genre).OrderBy(x => x.Id).ToList<Books>();
             List<BooksViewModel> booksView = _mapper.Map<List<BooksViewModel>>(bookList);
             return booksView;
         }
